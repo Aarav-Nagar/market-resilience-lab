@@ -52,12 +52,13 @@ the future with certainty.
 
 ## Status
 
-The first milestone establishes the data contract, expanding-window split
-generator, and deterministic transaction-cost-aware portfolio metrics. No
-empirical performance claim has been made yet.
+The first milestone establishes an enforced point-in-time data contract,
+expanding-window split generator, and deterministic transaction-cost-aware
+portfolio metrics. No empirical performance claim has been made yet.
 
 See [ROADMAP.md](ROADMAP.md) for planned research milestones and
-[CONTRIBUTING.md](CONTRIBUTING.md) for the project quality bar.
+[CONTRIBUTING.md](CONTRIBUTING.md) for the project quality bar. The required
+adapter fields and evidence gate are in [DATA_CONTRACT.md](DATA_CONTRACT.md).
 
 ## Quick start
 

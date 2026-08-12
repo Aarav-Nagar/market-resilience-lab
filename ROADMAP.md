@@ -2,7 +2,7 @@
 
 ## Milestone 1 — Reproducible experiment contract
 
-- [x] Define the prediction task and point-in-time data rules.
+- [x] Define and enforce the prediction task's point-in-time data rules.
 - [x] Implement expanding-window splits with a label-horizon embargo.
 - [x] Implement deterministic cross-sectional portfolio metrics with costs.
 - [ ] Specify a versioned public data adapter and licensing note.
