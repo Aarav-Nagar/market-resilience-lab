@@ -26,9 +26,11 @@ def evaluate_long_short_portfolio(
     """Evaluate equal-weight long/short returns for scored monthly universes.
 
     Rows need ``asset``, ``prediction``, and ``realized_return`` keys. Higher
-    predictions go long; lower predictions go short. Turnover is the half-sum
-    of absolute changes in signed portfolio weights across adjacent months.
-    ``cost_bps`` is charged on that turnover, so a 10 bps cost is ``10 / 10_000``.
+    predictions go long; lower predictions go short. An all-tied score vector
+    expresses no cross-sectional preference and produces neutral weights rather
+    than an arbitrary asset-name tie break. Turnover is the half-sum of absolute
+    changes in signed portfolio weights across adjacent months. ``cost_bps`` is
+    charged on that turnover, so a 10 bps cost is ``10 / 10_000``.
     """
     if sleeve_size < 1:
         raise ValueError("sleeve_size must be at least 1")
@@ -46,13 +48,20 @@ def evaluate_long_short_portfolio(
         if len(set(assets)) != len(assets):
             raise ValueError("asset identifiers must be unique within a month")
 
-        ordered = sorted(rows, key=lambda row: (float(row["prediction"]), str(row["asset"])))
-        short_rows = ordered[:sleeve_size]
-        long_rows = ordered[-sleeve_size:]
-        weights = {str(row["asset"]): -1.0 / sleeve_size for row in short_rows}
-        weights.update({str(row["asset"]): 1.0 / sleeve_size for row in long_rows})
+        predictions = {float(row["prediction"]) for row in rows}
+        if len(predictions) == 1:
+            weights: dict[str, float] = {}
+        else:
+            ordered = sorted(rows, key=lambda row: (float(row["prediction"]), str(row["asset"])))
+            short_rows = ordered[:sleeve_size]
+            long_rows = ordered[-sleeve_size:]
+            weights = {str(row["asset"]): -1.0 / sleeve_size for row in short_rows}
+            weights.update({str(row["asset"]): 1.0 / sleeve_size for row in long_rows})
         gross_returns.append(
-            sum(weights[str(row["asset"])] * float(row["realized_return"]) for row in rows)
+            sum(
+                weights.get(str(row["asset"]), 0.0) * float(row["realized_return"])
+                for row in rows
+            )
         )
         universe = set(previous_weights) | set(weights)
         turnovers.append(

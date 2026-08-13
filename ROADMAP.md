@@ -9,7 +9,7 @@
 
 ## Milestone 2 — Baselines before complexity
 
-- [ ] Add a zero-score baseline and a simple momentum baseline.
+- [x] Add a zero-score baseline and a simple momentum baseline.
 - [ ] Add a per-window preprocessing pipeline that fits only on training data.
 - [ ] Report ranking, calibration, turnover, and cost-adjusted return metrics.
 

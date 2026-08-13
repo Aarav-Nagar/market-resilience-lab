@@ -59,6 +59,8 @@ portfolio metrics. No empirical performance claim has been made yet.
 See [ROADMAP.md](ROADMAP.md) for planned research milestones and
 [CONTRIBUTING.md](CONTRIBUTING.md) for the project quality bar. The required
 adapter fields and evidence gate are in [DATA_CONTRACT.md](DATA_CONTRACT.md).
+Every later model will also be evaluated against the explicit rules in
+[BASELINES.md](BASELINES.md).
 
 ## Quick start
 

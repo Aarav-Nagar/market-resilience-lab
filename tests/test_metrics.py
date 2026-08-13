@@ -33,3 +33,18 @@ def test_month_requires_unique_assets() -> None:
             sleeve_size=1,
             cost_bps=0,
         )
+
+
+def test_all_tied_scores_produce_neutral_portfolio_not_asset_name_tie_break() -> None:
+    result = evaluate_long_short_portfolio(
+        [[
+            {"asset": "Z", "prediction": 0.0, "realized_return": 0.10},
+            {"asset": "A", "prediction": 0.0, "realized_return": -0.10},
+        ]],
+        sleeve_size=1,
+        cost_bps=10,
+    )
+
+    assert result.gross_return == 0.0
+    assert result.net_return == 0.0
+    assert result.average_turnover == 0.0
