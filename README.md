@@ -60,7 +60,8 @@ See [ROADMAP.md](ROADMAP.md) for planned research milestones and
 [CONTRIBUTING.md](CONTRIBUTING.md) for the project quality bar. The required
 adapter fields and evidence gate are in [DATA_CONTRACT.md](DATA_CONTRACT.md).
 Every later model will also be evaluated against the explicit rules in
-[BASELINES.md](BASELINES.md).
+[BASELINES.md](BASELINES.md). The first documented source adapter and its
+boundaries are in [DATA_SOURCES.md](DATA_SOURCES.md).
 
 ## Quick start
 
