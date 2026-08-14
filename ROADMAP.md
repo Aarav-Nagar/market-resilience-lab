@@ -15,6 +15,7 @@
 
 ## Milestone 3 — Comparable supervised models
 
+- [x] Add an inspectable ridge-regression reference model.
 - [ ] Add regularized linear, k-nearest-neighbor, SVM, tree, random-forest,
       extra-trees, and histogram-gradient-boosting adapters.
 - [ ] Persist each run's configuration, seed, package versions, and data hash.

@@ -5,12 +5,14 @@ from .splits import WalkForwardSplit, expanding_window_splits
 from .data_contract import Observation, load_observations_csv
 from .baselines import ScoredObservation, lagged_momentum_score, zero_score
 from .preprocessing import FeatureStandardizer, standardize_train_test
+from .models import RidgeRegressor
 
 __all__ = [
     "PortfolioMetrics",
     "Observation",
     "ScoredObservation",
     "FeatureStandardizer",
+    "RidgeRegressor",
     "WalkForwardSplit",
     "evaluate_long_short_portfolio",
     "expanding_window_splits",

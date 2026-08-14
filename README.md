@@ -63,6 +63,7 @@ Every later model will also be evaluated against the explicit rules in
 [BASELINES.md](BASELINES.md). The first documented source adapter and its
 boundaries are in [DATA_SOURCES.md](DATA_SOURCES.md), and the training-only
 preprocessing contract is in [PREPROCESSING.md](PREPROCESSING.md).
+The first supervised-model protocol is in [MODELS.md](MODELS.md).
 
 ## Quick start
 
