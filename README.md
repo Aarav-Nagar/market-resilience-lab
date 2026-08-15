@@ -64,6 +64,7 @@ Every later model will also be evaluated against the explicit rules in
 boundaries are in [DATA_SOURCES.md](DATA_SOURCES.md), and the training-only
 preprocessing contract is in [PREPROCESSING.md](PREPROCESSING.md).
 The first supervised-model protocol is in [MODELS.md](MODELS.md).
+Prediction diagnostics and their limits are documented in [EVALUATION.md](EVALUATION.md).
 
 ## Quick start
 
