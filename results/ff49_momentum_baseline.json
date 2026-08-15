@@ -1,0 +1,34 @@
+{
+  "baseline": "lagged_momentum_score",
+  "calibration": {
+    "intercept": 0.010778346839187911,
+    "mean_error": -6.114548130980352e-19,
+    "mean_squared_error": 0.004335978365675873,
+    "samples": 9114,
+    "slope": 0.0008372538625133023
+  },
+  "config": {
+    "alpha": 1.0,
+    "cost_bps": 10.0,
+    "embargo_periods": 1,
+    "min_train_periods": 1000,
+    "sleeve_size": 5
+  },
+  "evaluated_periods": 186,
+  "experiment": "baseline_walk_forward_v1",
+  "input_sha256": "24b8e76309e8e7ef90cf4cfd6656542ff8a75bde78f8c55945a31781372492fc",
+  "portfolio": {
+    "average_turnover": 0.5548387096774193,
+    "gross_return": 3.096109976385632,
+    "net_return": 2.6964235087879116,
+    "periods": 186,
+    "transaction_cost": 0.1032
+  },
+  "rank": {
+    "mean_rank_ic": 0.031145337915697437,
+    "scored_periods": 186,
+    "unscorable_periods": 0
+  },
+  "split_count": 186,
+  "target": "next_month_return"
+}

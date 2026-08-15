@@ -23,6 +23,22 @@ The committed initial screen uses a 1,000-month training window instead of the
 execution environment. Its exact configuration and negative outcome are in
 `results/README.md` and `results/ff49_ridge_initial.json`.
 
+## Exact-split reference baselines
+
+The zero-score and direct lagged-momentum baselines use the *same* expanding
+windows, embargo, input digest, sleeve, and cost model as ridge. They are not
+fit on the training rows: the training window remains part of the split contract
+so a baseline result is directly comparable to a fitted model result.
+
+```powershell
+python -m market_resilience_lab.experiments.baselines_walk_forward `
+  output/ff49_observations.csv results/ff49_zero_baseline.json `
+  --baseline zero_score --min-train-periods 1000
+python -m market_resilience_lab.experiments.baselines_walk_forward `
+  output/ff49_observations.csv results/ff49_momentum_baseline.json `
+  --baseline lagged_momentum_score --min-train-periods 1000
+```
+
 ## Run the initial demonstration
 
 ```powershell

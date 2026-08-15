@@ -28,7 +28,29 @@ that ridge regression, momentum, other supervised models, or individual-stock
 signals generally fail. The run has one source, one feature, one alpha, one
 portfolio construction, no uncertainty interval, and no regime-level analysis.
 
-The result is retained because the project asks when models break. The next
-experiments should compare the zero and momentum baselines under the exact same
-splits, then add uncertainty and regime diagnostics before judging any model
-family.
+The result is retained because the project asks when models break. The exact
+zero and momentum baselines are now included below; uncertainty and regime
+diagnostics remain necessary before judging any model family.
+
+## Exact-split baseline comparison
+
+`ff49_zero_baseline.json` and `ff49_momentum_baseline.json` use the identical
+canonical input hash, 1,000-month initial training window, one-month embargo,
+186 holdout months, top/bottom-five sleeve, and 10-basis-point cost assumption
+as the ridge screen. The zero baseline has no trainable parameters; it retains
+the split metadata solely to make the comparison exact.
+
+| Score source | Mean rank IC | Compounded gross return | Compounded net return | Avg. turnover |
+| --- | ---: | ---: | ---: | ---: |
+| Neutral zero score | Not defined (all ties) | 0.00% | 0.00% | 0.000 |
+| Direct lagged 12-1 momentum | 0.0311 | 309.61% | 269.64% | 0.555 |
+| Ridge on lagged 12-1 momentum | -0.0444 | -93.41% | -94.10% | 0.585 |
+
+This is a useful *failure contrast*, not an outperformance claim. On this
+single historical industry-portfolio screen, the direct point-in-time momentum
+ordering had positive historical ranking and portfolio diagnostics while the
+specified ridge configuration did not. It does not establish that momentum is
+profitable, that regularization caused the difference, or that either result
+will persist in other universes, periods, regimes, or after unmodeled costs.
+The next smallest research task is to diagnose the divergence by month and
+regime before selecting another model family.
