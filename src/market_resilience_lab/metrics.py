@@ -39,6 +39,7 @@ def evaluate_long_short_portfolio(
 
     previous_weights: dict[str, float] = {}
     gross_returns: list[float] = []
+    net_returns: list[float] = []
     turnovers: list[float] = []
     for month in monthly_rows:
         rows = list(month)
@@ -57,7 +58,7 @@ def evaluate_long_short_portfolio(
             long_rows = ordered[-sleeve_size:]
             weights = {str(row["asset"]): -1.0 / sleeve_size for row in short_rows}
             weights.update({str(row["asset"]): 1.0 / sleeve_size for row in long_rows})
-        gross_returns.append(
+        gross_return = (
             sum(
                 weights.get(str(row["asset"]), 0.0) * float(row["realized_return"])
                 for row in rows
@@ -67,17 +68,27 @@ def evaluate_long_short_portfolio(
         turnovers.append(
             0.5 * sum(abs(weights.get(asset, 0.0) - previous_weights.get(asset, 0.0)) for asset in universe)
         )
+        net_returns.append(gross_return - turnovers[-1] * cost_bps / 10_000)
+        gross_returns.append(gross_return)
         previous_weights = weights
 
     if not gross_returns:
         raise ValueError("at least one month is required")
     average_turnover = sum(turnovers) / len(turnovers)
     transaction_cost = sum(turnovers) * cost_bps / 10_000
-    gross_return = sum(gross_returns)
+    gross_return = _compound_returns(gross_returns)
+    net_return = _compound_returns(net_returns)
     return PortfolioMetrics(
         gross_return=gross_return,
-        net_return=gross_return - transaction_cost,
+        net_return=net_return,
         average_turnover=average_turnover,
         transaction_cost=transaction_cost,
         periods=len(gross_returns),
     )
+
+
+def _compound_returns(returns: Iterable[float]) -> float:
+    wealth = 1.0
+    for period_return in returns:
+        wealth *= 1.0 + period_return
+    return wealth - 1.0

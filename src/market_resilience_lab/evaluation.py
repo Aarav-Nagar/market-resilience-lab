@@ -29,7 +29,7 @@ class CalibrationDiagnostics:
 
 def rank_ic(month_rows: Iterable[Mapping[str, float | str]]) -> float | None:
     """Return Spearman rank correlation, or None when a cross-section is constant."""
-    rows = _validated_rows(month_rows)
+    rows = _validated_rows(month_rows, require_unique_assets=True)
     predictions = [float(row["prediction"]) for row in rows]
     realized = [float(row["realized_return"]) for row in rows]
     prediction_ranks = _average_ranks(predictions)
@@ -58,7 +58,7 @@ def summarize_rank_ic(
 
 def calibration(rows: Iterable[Mapping[str, float | str]]) -> CalibrationDiagnostics:
     """Calculate descriptive calibration and error diagnostics for holdout rows."""
-    data = _validated_rows(rows)
+    data = _validated_rows(rows, require_unique_assets=False)
     predictions = [float(row["prediction"]) for row in data]
     realized = [float(row["realized_return"]) for row in data]
     mean_prediction = sum(predictions) / len(predictions)
@@ -88,12 +88,14 @@ def calibration(rows: Iterable[Mapping[str, float | str]]) -> CalibrationDiagnos
     )
 
 
-def _validated_rows(rows: Iterable[Mapping[str, float | str]]) -> list[Mapping[str, float | str]]:
+def _validated_rows(
+    rows: Iterable[Mapping[str, float | str]], *, require_unique_assets: bool
+) -> list[Mapping[str, float | str]]:
     data = list(rows)
     if len(data) < 2:
         raise ValueError("at least two rows are required for prediction diagnostics")
     assets = [str(row["asset"]) for row in data]
-    if len(set(assets)) != len(assets):
+    if require_unique_assets and len(set(assets)) != len(assets):
         raise ValueError("asset identifiers must be unique within a cross-section")
     for row in data:
         if not isfinite(float(row["prediction"])) or not isfinite(float(row["realized_return"])):

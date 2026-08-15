@@ -39,3 +39,14 @@ def test_calibration_handles_constant_predictions_without_fake_slope() -> None:
     assert diagnostics.intercept == 1.0
     assert diagnostics.slope is None
     assert diagnostics.mean_squared_error == 1.0
+
+
+def test_calibration_allows_the_same_asset_in_different_holdout_months() -> None:
+    rows = [
+        {"asset": "A", "prediction": 0.0, "realized_return": 0.0},
+        {"asset": "A", "prediction": 1.0, "realized_return": 1.0},
+    ]
+
+    diagnostics = calibration(rows)
+
+    assert diagnostics.slope == 1.0

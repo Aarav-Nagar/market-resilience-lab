@@ -1,0 +1,33 @@
+{
+  "calibration": {
+    "intercept": 0.45071865929004656,
+    "mean_error": 6.508503470736041e-17,
+    "mean_squared_error": 0.0043015114008856685,
+    "samples": 9114,
+    "slope": -42.442958802789995
+  },
+  "config": {
+    "alpha": 1.0,
+    "cost_bps": 10.0,
+    "embargo_periods": 1,
+    "min_train_periods": 1000,
+    "sleeve_size": 5
+  },
+  "evaluated_periods": 186,
+  "experiment": "ridge_walk_forward_v1",
+  "input_sha256": "24b8e76309e8e7ef90cf4cfd6656542ff8a75bde78f8c55945a31781372492fc",
+  "portfolio": {
+    "average_turnover": 0.5849462365591398,
+    "gross_return": -0.9341247515891842,
+    "net_return": -0.9410235920806668,
+    "periods": 186,
+    "transaction_cost": 0.1088
+  },
+  "rank": {
+    "mean_rank_ic": -0.04438773233069828,
+    "scored_periods": 186,
+    "unscorable_periods": 0
+  },
+  "split_count": 186,
+  "target": "next_month_return"
+}

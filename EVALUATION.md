@@ -21,7 +21,7 @@ Constant predictions have a defined mean error/MSE but no slope.
 
 ## Portfolio evidence
 
-Use `evaluate_long_short_portfolio` on the same rows to report gross return,
-turnover, transaction cost, and net return. The evaluation runner will later
+Use `evaluate_long_short_portfolio` on the same rows to report compounded gross
+and net return, turnover, and transaction cost. The evaluation runner will later
 combine this module with regimes and confidence intervals. No single metric is
 treated as proof of investability.

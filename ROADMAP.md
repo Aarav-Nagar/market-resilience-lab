@@ -12,6 +12,7 @@
 - [x] Add a zero-score baseline and a simple momentum baseline.
 - [x] Add a per-window preprocessing pipeline that fits only on training data.
 - [x] Report tie-aware ranking, calibration, turnover, and cost-adjusted return metrics.
+- [x] Connect the source, split, preprocessing, ridge, and evaluation layers in one runner.
 
 ## Milestone 3 — Comparable supervised models
 
