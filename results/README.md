@@ -40,6 +40,11 @@ canonical input hash, 1,000-month initial training window, one-month embargo,
 as the ridge screen. The zero baseline has no trainable parameters; it retains
 the split metadata solely to make the comparison exact.
 
+Every committed result now embeds the validated input-sidecar manifest and its
+SHA-256 alongside the canonical CSV hash. This preserves the exact source URL,
+archive digest, retrieval timestamp, schema, and row count used by the run,
+without committing the provider's raw archive or CSV.
+
 | Score source | Mean rank IC | Compounded gross return | Compounded net return | Avg. turnover |
 | --- | ---: | ---: | ---: | ---: |
 | Neutral zero score | Not defined (all ties) | 0.00% | 0.00% | 0.000 |

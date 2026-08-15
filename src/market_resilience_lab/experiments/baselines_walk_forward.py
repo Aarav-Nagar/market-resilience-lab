@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 import argparse
-import hashlib
 import json
 import os
 import tempfile
@@ -16,6 +15,7 @@ from ..data_contract import Observation, load_observations_csv
 from ..evaluation import CalibrationDiagnostics, RankDiagnostics, calibration, summarize_rank_ic
 from ..metrics import PortfolioMetrics, evaluate_long_short_portfolio
 from ..splits import expanding_window_splits
+from .provenance import InputProvenance, load_input_provenance
 from .ridge_walk_forward import RidgeWalkForwardConfig, _group_by_period
 
 
@@ -29,6 +29,7 @@ class BaselineWalkForwardResult:
     baseline: BaselineName
     config: RidgeWalkForwardConfig
     input_sha256: str | None
+    input_provenance: InputProvenance | None
     split_count: int
     evaluated_periods: int
     rank: RankDiagnostics
@@ -42,6 +43,7 @@ class BaselineWalkForwardResult:
             "target": "next_month_return",
             "config": asdict(self.config),
             "input_sha256": self.input_sha256,
+            "input_provenance": None if self.input_provenance is None else self.input_provenance.as_dict(),
             "split_count": self.split_count,
             "evaluated_periods": self.evaluated_periods,
             "rank": asdict(self.rank),
@@ -56,6 +58,7 @@ def run_baseline_walk_forward(
     baseline: BaselineName,
     config: RidgeWalkForwardConfig,
     input_sha256: str | None = None,
+    input_provenance: InputProvenance | None = None,
 ) -> BaselineWalkForwardResult:
     """Score each embargoed holdout window using an explicit, non-fitted baseline."""
     grouped = _group_by_period(observations)
@@ -90,6 +93,7 @@ def run_baseline_walk_forward(
         baseline=baseline,
         config=config,
         input_sha256=input_sha256,
+        input_provenance=input_provenance,
         split_count=len(splits),
         evaluated_periods=len(scored_months),
         rank=summarize_rank_ic(scored_months),
@@ -105,11 +109,13 @@ def run_from_csv(
 ) -> BaselineWalkForwardResult:
     """Load a canonical CSV and bind its content digest into the result."""
     csv_path = Path(path)
+    provenance = load_input_provenance(csv_path)
     return run_baseline_walk_forward(
         load_observations_csv(csv_path),
         baseline=baseline,
         config=config,
-        input_sha256=hashlib.sha256(csv_path.read_bytes()).hexdigest(),
+        input_sha256=provenance.input_sha256,
+        input_provenance=provenance,
     )
 
 

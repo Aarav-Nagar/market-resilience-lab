@@ -16,6 +16,17 @@
   },
   "evaluated_periods": 186,
   "experiment": "baseline_walk_forward_v1",
+  "input_provenance": {
+    "input_sha256": "24b8e76309e8e7ef90cf4cfd6656542ff8a75bde78f8c55945a31781372492fc",
+    "manifest": {
+      "archive_sha256": "a0b23457eac619c8a3cce362de563b6f57acc3514779ceccdb99886edfa0a804",
+      "retrieved_at_utc": "2026-08-15T02:11:20.562821+00:00",
+      "row_count": 55282,
+      "schema": "market-resilience-lab canonical observation CSV v1",
+      "source_url": "https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/ftp/49_Industry_Portfolios_CSV.zip"
+    },
+    "manifest_sha256": "e6b84e71645ed846301d2d9e28c7182ffb179e4c6a55f43127ac6be4409d0dc9"
+  },
   "input_sha256": "24b8e76309e8e7ef90cf4cfd6656542ff8a75bde78f8c55945a31781372492fc",
   "portfolio": {
     "average_turnover": 0.5548387096774193,

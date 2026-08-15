@@ -42,6 +42,7 @@ def test_runner_uses_embargoed_expanding_windows_and_returns_all_diagnostics(tmp
     assert result.calibration.samples == 6
     assert result.portfolio.periods == 3
     assert result.input_sha256 == "known-input"
+    assert result.input_provenance is None
 
     output = tmp_path / "result.json"
     write_result(output, result)

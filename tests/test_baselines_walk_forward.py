@@ -41,6 +41,7 @@ def test_zero_score_remains_neutral_on_every_embargoed_holdout() -> None:
     assert result.portfolio.net_return == 0.0
     assert result.portfolio.average_turnover == 0.0
     assert result.input_sha256 == "known-input"
+    assert result.input_provenance is None
 
 
 def test_lagged_momentum_is_scored_on_the_same_embargoed_holdouts() -> None:

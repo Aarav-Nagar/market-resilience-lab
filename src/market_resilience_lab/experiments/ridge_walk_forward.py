@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 import argparse
-import hashlib
 import json
 import os
 import tempfile
@@ -18,6 +17,7 @@ from ..metrics import PortfolioMetrics, evaluate_long_short_portfolio
 from ..models import RidgeRegressor
 from ..preprocessing import standardize_train_test
 from ..splits import expanding_window_splits
+from .provenance import InputProvenance, load_input_provenance
 
 
 @dataclass(frozen=True)
@@ -33,6 +33,7 @@ class RidgeWalkForwardConfig:
 class RidgeWalkForwardResult:
     config: RidgeWalkForwardConfig
     input_sha256: str | None
+    input_provenance: InputProvenance | None
     split_count: int
     evaluated_periods: int
     rank: RankDiagnostics
@@ -45,6 +46,7 @@ class RidgeWalkForwardResult:
             "target": "next_month_return",
             "config": asdict(self.config),
             "input_sha256": self.input_sha256,
+            "input_provenance": None if self.input_provenance is None else self.input_provenance.as_dict(),
             "split_count": self.split_count,
             "evaluated_periods": self.evaluated_periods,
             "rank": asdict(self.rank),
@@ -54,7 +56,11 @@ class RidgeWalkForwardResult:
 
 
 def run_ridge_walk_forward(
-    observations: Iterable[Observation], *, config: RidgeWalkForwardConfig, input_sha256: str | None = None
+    observations: Iterable[Observation],
+    *,
+    config: RidgeWalkForwardConfig,
+    input_sha256: str | None = None,
+    input_provenance: InputProvenance | None = None,
 ) -> RidgeWalkForwardResult:
     """Run ridge on each embargoed expanding split without reusing holdout rows."""
     grouped = _group_by_period(observations)
@@ -96,6 +102,7 @@ def run_ridge_walk_forward(
     return RidgeWalkForwardResult(
         config=config,
         input_sha256=input_sha256,
+        input_provenance=input_provenance,
         split_count=len(splits),
         evaluated_periods=len(scored_months),
         rank=summarize_rank_ic(scored_months),
@@ -109,10 +116,12 @@ def run_ridge_walk_forward(
 def run_from_csv(path: str | Path, *, config: RidgeWalkForwardConfig) -> RidgeWalkForwardResult:
     """Load a canonical CSV and retain its exact content digest in the result."""
     csv_path = Path(path)
+    provenance = load_input_provenance(csv_path)
     return run_ridge_walk_forward(
         load_observations_csv(csv_path),
         config=config,
-        input_sha256=hashlib.sha256(csv_path.read_bytes()).hexdigest(),
+        input_sha256=provenance.input_sha256,
+        input_provenance=provenance,
     )
 
 

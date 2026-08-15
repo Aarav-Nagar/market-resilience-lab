@@ -15,8 +15,9 @@ long/short portfolio calculation.
 
 The defaults are a reproducible methodology demonstration, not tuned choices or
 an investment strategy. The JSON result records every setting, the canonical
-input SHA-256, counts of scored/unscorable months, and the diagnostics. Result
-writes are atomic so an interrupted run cannot leave a partial evidence file.
+input SHA-256, the digest and contents of its adjacent adapter manifest when
+present, counts of scored/unscorable months, and the diagnostics. Result writes
+are atomic so an interrupted run cannot leave a partial evidence file.
 
 The committed initial screen uses a 1,000-month training window instead of the
 120-month default so the full historical run remains bounded in the local
