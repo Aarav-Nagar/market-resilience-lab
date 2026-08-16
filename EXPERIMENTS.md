@@ -19,6 +19,20 @@ input SHA-256, the digest and contents of its adjacent adapter manifest when
 present, counts of scored/unscorable months, and the diagnostics. Result writes
 are atomic so an interrupted run cannot leave a partial evidence file.
 
+## Month-level divergence audit
+
+The ridge/momentum divergence audit emits one record per identical embargoed
+holdout month: each score's rank IC, their difference, and its one-month gross
+long/short return. Gross returns are stored before costs because turnover costs
+depend on the previous month's positions and remain reported in the aggregate
+result artifacts.
+
+```powershell
+python -m market_resilience_lab.experiments.divergence_audit `
+  output/ff49_observations.csv results/ff49_ridge_momentum_divergence.json `
+  --min-train-periods 1000
+```
+
 The committed initial screen uses a 1,000-month training window instead of the
 120-month default so the full historical run remains bounded in the local
 execution environment. Its exact configuration and negative outcome are in

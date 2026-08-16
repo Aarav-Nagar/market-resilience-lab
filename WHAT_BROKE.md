@@ -37,10 +37,19 @@ profitable, that ridge regression generally fails, that regularization caused
 the difference, or that either score survives a different universe, time range,
 regime, portfolio construction, uncertainty analysis, or unmodeled costs.
 
-**Next falsifiable check.** Produce month-level ridge and direct-momentum rank
-IC/portfolio-return records, then compare their divergence across documented,
-non-overlapping regimes. Do not add another model until that diagnostic shows
-whether the reversal is broad, period-concentrated, or a data/split artifact.
+**Month-level follow-up (2026-08-16).** The committed
+[`results/ff49_ridge_momentum_divergence.json`](results/ff49_ridge_momentum_divergence.json)
+contains all 186 identical holdout months. Ridge inverted the direct momentum
+rank order in 182 months and preserved it in four. This is expectedly narrow:
+with one feature, a linear ridge score can only maintain that feature's ordering
+or reverse it when the fitted coefficient changes sign. The evidence therefore
+does not support a story about nonlinear model behavior or a period-isolated
+failure; it identifies learned coefficient sign as the immediate mechanism.
+
+**Next falsifiable check.** Define and source non-overlapping historical regime
+intervals, then aggregate the already-recorded monthly divergence by regime.
+Do not add another model until that diagnostic determines whether negative
+coefficient selection clusters in documented market episodes.
 
 ## Entry rules
 

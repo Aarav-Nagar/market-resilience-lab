@@ -59,3 +59,14 @@ profitable, that regularization caused the difference, or that either result
 will persist in other universes, periods, regimes, or after unmodeled costs.
 The next smallest research task is to diagnose the divergence by month and
 regime before selecting another model family.
+
+## Month-level divergence audit
+
+[`ff49_ridge_momentum_divergence.json`](ff49_ridge_momentum_divergence.json)
+records rank IC and one-month gross portfolio return for both scores in every
+holdout month. Ridge inverted the direct momentum ranking in 182 of 186 months
+and preserved it in four. Because this screen has one feature, that is the
+expected set of ranking behaviors for a fitted linear score: it can preserve or
+reverse the raw feature order as its learned coefficient changes sign. This
+identifies a sign-selection mechanism; it does not yet explain *why* the sign
+was selected or whether it clusters by documented market regime.
