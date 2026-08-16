@@ -27,7 +27,7 @@
 - [ ] Define regime intervals with sources and non-overlapping labeling rules.
 - [ ] Add calibration and data-drift diagnostics.
 - [ ] Build the Regime Stress Test report/dashboard.
-- [ ] Maintain a public `WHAT_BROKE.md` log for failed or inconclusive findings.
+- [x] Maintain a public `WHAT_BROKE.md` log for failed or inconclusive findings.
 
 ## Out of scope until explicitly approved
 

@@ -52,9 +52,10 @@ the future with certainty.
 
 ## Status
 
-The first milestone establishes an enforced point-in-time data contract,
-expanding-window split generator, and deterministic transaction-cost-aware
-portfolio metrics. No empirical performance claim has been made yet.
+The first reproducible screen now compares a neutral baseline, direct lagged
+momentum, and a ridge reference model under identical embargoed windows. Its
+historical contrast is documented with limits in [results/README.md](results/README.md);
+it is not an empirical outperformance claim.
 
 See [ROADMAP.md](ROADMAP.md) for planned research milestones and
 [CONTRIBUTING.md](CONTRIBUTING.md) for the project quality bar. The required
@@ -66,6 +67,7 @@ preprocessing contract is in [PREPROCESSING.md](PREPROCESSING.md).
 The first supervised-model protocol is in [MODELS.md](MODELS.md).
 Prediction diagnostics and their limits are documented in [EVALUATION.md](EVALUATION.md).
 The first complete walk-forward runner is documented in [EXPERIMENTS.md](EXPERIMENTS.md).
+Negative and inconclusive findings are retained in [WHAT_BROKE.md](WHAT_BROKE.md).
 
 ## Quick start
 
