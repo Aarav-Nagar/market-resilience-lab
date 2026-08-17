@@ -70,3 +70,14 @@ expected set of ranking behaviors for a fitted linear score: it can preserve or
 reverse the raw feature order as its learned coefficient changes sign. This
 identifies a sign-selection mechanism; it does not yet explain *why* the sign
 was selected or whether it clusters by documented market regime.
+
+## Initial regime grouping
+
+[`ff49_ridge_momentum_by_regime.json`](ff49_ridge_momentum_by_regime.json)
+aggregates the monthly audit using the small, source-linked registry in
+[`config/regimes_v1.json`](../config/regimes_v1.json). The March--April 2020
+recession label has only two months; the March 2022--July 2023 FOMC tightening
+window has 17; the remaining 167 months are explicitly `normal_or_unlabeled`.
+Those counts are too small and the registry too incomplete for a regime-level
+claim. The report is retained as a reproducible descriptive slice and preserves
+the monthly gross-return/cost limitation in its artifact.

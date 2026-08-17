@@ -1,0 +1,66 @@
+{
+  "audit_experiment": "ridge_momentum_divergence_audit_v1",
+  "audit_input_provenance": {
+    "input_sha256": "24b8e76309e8e7ef90cf4cfd6656542ff8a75bde78f8c55945a31781372492fc",
+    "manifest": {
+      "archive_sha256": "a0b23457eac619c8a3cce362de563b6f57acc3514779ceccdb99886edfa0a804",
+      "retrieved_at_utc": "2026-08-15T02:11:20.562821+00:00",
+      "row_count": 55282,
+      "schema": "market-resilience-lab canonical observation CSV v1",
+      "source_url": "https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/ftp/49_Industry_Portfolios_CSV.zip"
+    },
+    "manifest_sha256": "e6b84e71645ed846301d2d9e28c7182ffb179e4c6a55f43127ac6be4409d0dc9"
+  },
+  "experiment": "ridge_momentum_regime_report_v1",
+  "limitations": [
+    "Descriptive historical grouping only; no causal or outperformance claim.",
+    "The normal_or_unlabeled bucket includes all months outside the small initial registry.",
+    "Gross monthly returns exclude sequential turnover costs; use aggregate artifacts for cost-aware results."
+  ],
+  "registry": {
+    "intervals": [
+      {
+        "end": "2020-04-30",
+        "name": "covid_recession_nber_trough",
+        "rationale": "Monthly FRED USREC trough-method recession shading: the month after the NBER peak through the trough.",
+        "source_url": "https://fred.stlouisfed.org/series/USREC",
+        "start": "2020-03-01"
+      },
+      {
+        "end": "2023-07-31",
+        "name": "fomc_tightening_2022_2023",
+        "rationale": "Inclusive monthly window from the March 2022 rate increase through the July 2023 increase; a policy-window label, not a causal market-regime claim.",
+        "source_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20220316a.htm; https://www.federalreserve.gov/newsevents/pressreleases/monetary20230726a.htm",
+        "start": "2022-03-01"
+      }
+    ],
+    "schema": "market-resilience-lab regime registry v1",
+    "unlabeled_value": "normal_or_unlabeled"
+  },
+  "summaries": {
+    "covid_recession_nber_trough": {
+      "inverted_rank_order_months": 1,
+      "mean_momentum_gross_return": 0.017900000000000027,
+      "mean_momentum_rank_ic": -0.005586877218073508,
+      "mean_ridge_gross_return": -0.017900000000000027,
+      "mean_ridge_rank_ic": 0.005586877218073508,
+      "months": 2
+    },
+    "fomc_tightening_2022_2023": {
+      "inverted_rank_order_months": 11,
+      "mean_momentum_gross_return": -0.008231764705882357,
+      "mean_momentum_rank_ic": 0.010158203518857328,
+      "mean_ridge_gross_return": 0.008231764705882343,
+      "mean_ridge_rank_ic": -0.010158203518857328,
+      "months": 17
+    },
+    "normal_or_unlabeled": {
+      "inverted_rank_order_months": 91,
+      "mean_momentum_gross_return": 0.010803832335329342,
+      "mean_momentum_rank_ic": 0.0337216595624868,
+      "mean_ridge_gross_return": -0.015080479041916173,
+      "mean_ridge_rank_ic": -0.04847067370135002,
+      "months": 167
+    }
+  }
+}

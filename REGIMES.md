@@ -12,3 +12,11 @@ from each result row's `as_of` month. Months outside an interval receive
 
 The registry does not yet cover every historical episode. New intervals must
 cite a primary source, explain their date rule, and pass the overlap guardrail.
+
+## Reproduce the descriptive report
+
+```powershell
+python -m market_resilience_lab.experiments.regime_report `
+  results/ff49_ridge_momentum_divergence.json config/regimes_v1.json `
+  results/ff49_ridge_momentum_by_regime.json
+```

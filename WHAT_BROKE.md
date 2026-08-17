@@ -51,6 +51,14 @@ intervals, then aggregate the already-recorded monthly divergence by regime.
 Do not add another model until that diagnostic determines whether negative
 coefficient selection clusters in documented market episodes.
 
+**Initial grouping result (2026-08-17).** The first source-linked grouping is
+available in [`results/ff49_ridge_momentum_by_regime.json`](results/ff49_ridge_momentum_by_regime.json).
+It has only two NBER/FRED recession months and 17 FOMC-tightening months, while
+167 months remain `normal_or_unlabeled`. It is therefore a registry and report
+validation step, not evidence that the ridge reversal is concentrated in either
+episode. The next addition must expand sourced intervals before interpreting
+cross-regime differences.
+
 ## Entry rules
 
 - Link every finding to a committed result artifact and its reproduction command.
