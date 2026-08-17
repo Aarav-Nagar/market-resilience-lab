@@ -24,7 +24,7 @@
 
 ## Milestone 4 — Regime and failure analysis
 
-- [ ] Define regime intervals with sources and non-overlapping labeling rules.
+- [x] Define initial regime intervals with sources and non-overlapping labeling rules.
 - [ ] Add calibration and data-drift diagnostics.
 - [ ] Build the Regime Stress Test report/dashboard.
 - [x] Maintain a public `WHAT_BROKE.md` log for failed or inconclusive findings.

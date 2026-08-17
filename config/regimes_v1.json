@@ -1,0 +1,20 @@
+{
+  "schema": "market-resilience-lab regime registry v1",
+  "unlabeled_value": "normal_or_unlabeled",
+  "intervals": [
+    {
+      "name": "covid_recession_nber_trough",
+      "start": "2020-03-01",
+      "end": "2020-04-30",
+      "source_url": "https://fred.stlouisfed.org/series/USREC",
+      "rationale": "Monthly FRED USREC trough-method recession shading: the month after the NBER peak through the trough."
+    },
+    {
+      "name": "fomc_tightening_2022_2023",
+      "start": "2022-03-01",
+      "end": "2023-07-31",
+      "source_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20220316a.htm; https://www.federalreserve.gov/newsevents/pressreleases/monetary20230726a.htm",
+      "rationale": "Inclusive monthly window from the March 2022 rate increase through the July 2023 increase; a policy-window label, not a causal market-regime claim."
+    }
+  ]
+}
