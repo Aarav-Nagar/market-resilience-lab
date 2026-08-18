@@ -1,0 +1,1329 @@
+{
+  "config": {
+    "alpha": 1.0,
+    "cost_bps": 10.0,
+    "embargo_periods": 1,
+    "min_train_periods": 1000,
+    "sleeve_size": 5
+  },
+  "experiment": "ridge_feature_drift_audit_v1",
+  "input_provenance": {
+    "input_sha256": "24b8e76309e8e7ef90cf4cfd6656542ff8a75bde78f8c55945a31781372492fc",
+    "manifest": {
+      "archive_sha256": "a0b23457eac619c8a3cce362de563b6f57acc3514779ceccdb99886edfa0a804",
+      "retrieved_at_utc": "2026-08-15T02:11:20.562821+00:00",
+      "row_count": 55282,
+      "schema": "market-resilience-lab canonical observation CSV v1",
+      "source_url": "https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/ftp/49_Industry_Portfolios_CSV.zip"
+    },
+    "manifest_sha256": "e6b84e71645ed846301d2d9e28c7182ffb179e4c6a55f43127ac6be4409d0dc9"
+  },
+  "limitations": [
+    "Univariate feature drift only; no claim that drift caused prediction failure.",
+    "Scores are standardized using each training window only."
+  ],
+  "months": [
+    {
+      "as_of": "2010-12-31",
+      "max_abs_z_score": 1.9943922886568735,
+      "mean_abs_z_score": 0.40748793304641356,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2011-01-31",
+      "max_abs_z_score": 2.010290438473852,
+      "mean_abs_z_score": 0.4338365318260027,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2011-02-28",
+      "max_abs_z_score": 2.016146149460883,
+      "mean_abs_z_score": 0.5969888558170986,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2011-03-31",
+      "max_abs_z_score": 1.9322373795373629,
+      "mean_abs_z_score": 0.521720751018224,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2011-04-30",
+      "max_abs_z_score": 1.9644361521644584,
+      "mean_abs_z_score": 0.4007271713176347,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2011-05-31",
+      "max_abs_z_score": 1.36713024166136,
+      "mean_abs_z_score": 0.3666146314756607,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2011-06-30",
+      "max_abs_z_score": 1.7010183845390612,
+      "mean_abs_z_score": 0.5566692127322317,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2011-07-31",
+      "max_abs_z_score": 2.447990551731028,
+      "mean_abs_z_score": 0.7703231732148301,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2011-08-31",
+      "max_abs_z_score": 1.7118193806075646,
+      "mean_abs_z_score": 0.3724873361648076,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2011-09-30",
+      "max_abs_z_score": 1.8445289203210857,
+      "mean_abs_z_score": 0.34679255302672946,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2011-10-31",
+      "max_abs_z_score": 1.1654895943751076,
+      "mean_abs_z_score": 0.4927946404569617,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2011-11-30",
+      "max_abs_z_score": 0.9039984900115513,
+      "mean_abs_z_score": 0.3146668691784613,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2011-12-31",
+      "max_abs_z_score": 1.2026148947452138,
+      "mean_abs_z_score": 0.354308968351484,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2012-01-31",
+      "max_abs_z_score": 1.769015365488667,
+      "mean_abs_z_score": 0.5028066984750637,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2012-02-29",
+      "max_abs_z_score": 1.77516215913581,
+      "mean_abs_z_score": 0.39584765984466913,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2012-03-31",
+      "max_abs_z_score": 1.8076437237926621,
+      "mean_abs_z_score": 0.40354452309647865,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2012-04-30",
+      "max_abs_z_score": 2.1391316688973547,
+      "mean_abs_z_score": 0.4183898571891502,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2012-05-31",
+      "max_abs_z_score": 2.066131287852202,
+      "mean_abs_z_score": 0.48230018344161607,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2012-06-30",
+      "max_abs_z_score": 2.341616714370252,
+      "mean_abs_z_score": 0.609640903663316,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2012-07-31",
+      "max_abs_z_score": 2.2385924160138395,
+      "mean_abs_z_score": 0.49642648898876046,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2012-08-31",
+      "max_abs_z_score": 2.3849285607451054,
+      "mean_abs_z_score": 0.4617747407130455,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2012-09-30",
+      "max_abs_z_score": 2.105937089898836,
+      "mean_abs_z_score": 0.331236756263312,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2012-10-31",
+      "max_abs_z_score": 1.6299642021357181,
+      "mean_abs_z_score": 0.5895557991053054,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2012-11-30",
+      "max_abs_z_score": 1.5894581714594582,
+      "mean_abs_z_score": 0.31362316345090835,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2012-12-31",
+      "max_abs_z_score": 1.692370728729015,
+      "mean_abs_z_score": 0.32849540186155957,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2013-01-31",
+      "max_abs_z_score": 1.2423416496126807,
+      "mean_abs_z_score": 0.31544030650176164,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2013-02-28",
+      "max_abs_z_score": 1.3584928092002517,
+      "mean_abs_z_score": 0.3486384794598328,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2013-03-31",
+      "max_abs_z_score": 1.4995766897829708,
+      "mean_abs_z_score": 0.33999127550202146,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2013-04-30",
+      "max_abs_z_score": 1.419854235350148,
+      "mean_abs_z_score": 0.3493161003162188,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2013-05-31",
+      "max_abs_z_score": 1.4773638426816633,
+      "mean_abs_z_score": 0.3902257109444848,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2013-06-30",
+      "max_abs_z_score": 1.6478965777622803,
+      "mean_abs_z_score": 0.6465053856810187,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2013-07-31",
+      "max_abs_z_score": 1.6524117220435555,
+      "mean_abs_z_score": 0.5425673821595702,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2013-08-31",
+      "max_abs_z_score": 2.313097794331131,
+      "mean_abs_z_score": 0.750027623636595,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2013-09-30",
+      "max_abs_z_score": 1.6932374214979475,
+      "mean_abs_z_score": 0.536888139124109,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2013-10-31",
+      "max_abs_z_score": 2.048940375454792,
+      "mean_abs_z_score": 0.6195355002474742,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2013-11-30",
+      "max_abs_z_score": 2.055785294970597,
+      "mean_abs_z_score": 0.76892685006139,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2013-12-31",
+      "max_abs_z_score": 1.9614334730950156,
+      "mean_abs_z_score": 0.8296499111001664,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2014-01-31",
+      "max_abs_z_score": 2.032143090508725,
+      "mean_abs_z_score": 0.8395647498485603,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2014-02-28",
+      "max_abs_z_score": 2.0947338905354957,
+      "mean_abs_z_score": 0.5142683592766951,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2014-03-31",
+      "max_abs_z_score": 2.3093375327435344,
+      "mean_abs_z_score": 0.5854056962067753,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2014-04-30",
+      "max_abs_z_score": 1.8771740671361217,
+      "mean_abs_z_score": 0.4471521609049314,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2014-05-31",
+      "max_abs_z_score": 1.775182607241442,
+      "mean_abs_z_score": 0.3751420955915571,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2014-06-30",
+      "max_abs_z_score": 1.925758742929635,
+      "mean_abs_z_score": 0.3487874733489238,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2014-07-31",
+      "max_abs_z_score": 2.11080447493385,
+      "mean_abs_z_score": 0.4402744014724758,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2014-08-31",
+      "max_abs_z_score": 1.7053843471125842,
+      "mean_abs_z_score": 0.286029137936347,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2014-09-30",
+      "max_abs_z_score": 2.0605670949165593,
+      "mean_abs_z_score": 0.4001307826936999,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2014-10-31",
+      "max_abs_z_score": 1.57708616572852,
+      "mean_abs_z_score": 0.2892028828826767,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2014-11-30",
+      "max_abs_z_score": 1.5019673625201821,
+      "mean_abs_z_score": 0.30754009635170737,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2014-12-31",
+      "max_abs_z_score": 1.4059717565895267,
+      "mean_abs_z_score": 0.30141964096114304,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2015-01-31",
+      "max_abs_z_score": 1.5696102027338317,
+      "mean_abs_z_score": 0.34569072669855955,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2015-02-28",
+      "max_abs_z_score": 1.7819082662212153,
+      "mean_abs_z_score": 0.34623605433495586,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2015-03-31",
+      "max_abs_z_score": 1.6071379719051744,
+      "mean_abs_z_score": 0.3481027817766301,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2015-04-30",
+      "max_abs_z_score": 1.9233554635941574,
+      "mean_abs_z_score": 0.3667505798441743,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2015-05-31",
+      "max_abs_z_score": 1.8964452225207937,
+      "mean_abs_z_score": 0.3183845047216143,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2015-06-30",
+      "max_abs_z_score": 2.0723012378747256,
+      "mean_abs_z_score": 0.3443583674664519,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2015-07-31",
+      "max_abs_z_score": 2.4558306718610385,
+      "mean_abs_z_score": 0.4565041808743551,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2015-08-31",
+      "max_abs_z_score": 2.6508903277332254,
+      "mean_abs_z_score": 0.4665554578537149,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2015-09-30",
+      "max_abs_z_score": 2.6171757972901615,
+      "mean_abs_z_score": 0.5802087305411953,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2015-10-31",
+      "max_abs_z_score": 2.862993765662277,
+      "mean_abs_z_score": 0.6051563523662127,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": 1
+    },
+    {
+      "as_of": "2015-11-30",
+      "max_abs_z_score": 3.047410515856941,
+      "mean_abs_z_score": 0.4847163407863664,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2015-12-31",
+      "max_abs_z_score": 3.0177341123363797,
+      "mean_abs_z_score": 0.5167427262365774,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2016-01-31",
+      "max_abs_z_score": 2.954366084938662,
+      "mean_abs_z_score": 0.584682371083379,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": 1
+    },
+    {
+      "as_of": "2016-02-29",
+      "max_abs_z_score": 2.856304355473089,
+      "mean_abs_z_score": 0.6783777989016073,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": 1
+    },
+    {
+      "as_of": "2016-03-31",
+      "max_abs_z_score": 2.9101544547750353,
+      "mean_abs_z_score": 0.791044834948915,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": 1
+    },
+    {
+      "as_of": "2016-04-30",
+      "max_abs_z_score": 2.5479244157567553,
+      "mean_abs_z_score": 0.5705954737728945,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2016-05-31",
+      "max_abs_z_score": 2.387122122355901,
+      "mean_abs_z_score": 0.5334296199351457,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2016-06-30",
+      "max_abs_z_score": 2.1225364527380677,
+      "mean_abs_z_score": 0.518861947586027,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2016-07-31",
+      "max_abs_z_score": 1.924460548842826,
+      "mean_abs_z_score": 0.547776641174655,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2016-08-31",
+      "max_abs_z_score": 5.104389260621232,
+      "mean_abs_z_score": 0.43679572782608134,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2016-09-30",
+      "max_abs_z_score": 3.9297776572701832,
+      "mean_abs_z_score": 0.3319802223347609,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2016-10-31",
+      "max_abs_z_score": 4.597190147292934,
+      "mean_abs_z_score": 0.38844704138467395,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2016-11-30",
+      "max_abs_z_score": 2.977675237186548,
+      "mean_abs_z_score": 0.43081395662935756,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2016-12-31",
+      "max_abs_z_score": 3.5473380095838625,
+      "mean_abs_z_score": 0.3936487085844138,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2017-01-31",
+      "max_abs_z_score": 3.3233865065125854,
+      "mean_abs_z_score": 0.41253140749047784,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2017-02-28",
+      "max_abs_z_score": 3.2385855406954245,
+      "mean_abs_z_score": 0.6080526894609225,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2017-03-31",
+      "max_abs_z_score": 2.2364818528679202,
+      "mean_abs_z_score": 0.5424458308967328,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2017-04-30",
+      "max_abs_z_score": 1.2714306882751745,
+      "mean_abs_z_score": 0.3249925201155529,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2017-05-31",
+      "max_abs_z_score": 1.0173086841092236,
+      "mean_abs_z_score": 0.31293927426984697,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2017-06-30",
+      "max_abs_z_score": 1.0080504565586998,
+      "mean_abs_z_score": 0.3142298518913263,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2017-07-31",
+      "max_abs_z_score": 1.0409933697119953,
+      "mean_abs_z_score": 0.40725243252162646,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2017-08-31",
+      "max_abs_z_score": 1.0330212238721366,
+      "mean_abs_z_score": 0.3347028999049139,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2017-09-30",
+      "max_abs_z_score": 0.9846292758211201,
+      "mean_abs_z_score": 0.34380241452204335,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2017-10-31",
+      "max_abs_z_score": 1.128266586632002,
+      "mean_abs_z_score": 0.4023851755308674,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2017-11-30",
+      "max_abs_z_score": 1.2090509181664648,
+      "mean_abs_z_score": 0.523769356555399,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2017-12-31",
+      "max_abs_z_score": 1.0379027576401174,
+      "mean_abs_z_score": 0.4393192519169067,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2018-01-31",
+      "max_abs_z_score": 1.0609314636957767,
+      "mean_abs_z_score": 0.40987679024908885,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2018-02-28",
+      "max_abs_z_score": 1.5420409105400514,
+      "mean_abs_z_score": 0.4706452219050412,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2018-03-31",
+      "max_abs_z_score": 1.4546107641913824,
+      "mean_abs_z_score": 0.38225418000151173,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2018-04-30",
+      "max_abs_z_score": 1.1694500215115013,
+      "mean_abs_z_score": 0.35415703380016816,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2018-05-31",
+      "max_abs_z_score": 1.1372153871598643,
+      "mean_abs_z_score": 0.35691162447156366,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2018-06-30",
+      "max_abs_z_score": 1.4266604397013423,
+      "mean_abs_z_score": 0.43131888964565385,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2018-07-31",
+      "max_abs_z_score": 1.6893059808346509,
+      "mean_abs_z_score": 0.40197198235798076,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2018-08-31",
+      "max_abs_z_score": 1.0313493220748795,
+      "mean_abs_z_score": 0.37337931254656304,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2018-09-30",
+      "max_abs_z_score": 1.2068735736002083,
+      "mean_abs_z_score": 0.43216063978669106,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2018-10-31",
+      "max_abs_z_score": 1.1387037230623414,
+      "mean_abs_z_score": 0.42962700739880444,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2018-11-30",
+      "max_abs_z_score": 1.855583130363696,
+      "mean_abs_z_score": 0.46484107801326285,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2018-12-31",
+      "max_abs_z_score": 1.9313508285004626,
+      "mean_abs_z_score": 0.4640349674620823,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2019-01-31",
+      "max_abs_z_score": 2.064591736778146,
+      "mean_abs_z_score": 0.7682794704781183,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2019-02-28",
+      "max_abs_z_score": 1.942504877244143,
+      "mean_abs_z_score": 0.6379488916392635,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2019-03-31",
+      "max_abs_z_score": 1.5782971977858515,
+      "mean_abs_z_score": 0.4603348277845129,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2019-04-30",
+      "max_abs_z_score": 1.693712003596133,
+      "mean_abs_z_score": 0.4330340374163314,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2019-05-31",
+      "max_abs_z_score": 1.3477504489135104,
+      "mean_abs_z_score": 0.35160935443667274,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2019-06-30",
+      "max_abs_z_score": 1.5283350378247347,
+      "mean_abs_z_score": 0.5626007902456919,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2019-07-31",
+      "max_abs_z_score": 1.2331910715686139,
+      "mean_abs_z_score": 0.39175392675896137,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2019-08-31",
+      "max_abs_z_score": 1.3834922978538298,
+      "mean_abs_z_score": 0.4547405857806687,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2019-09-30",
+      "max_abs_z_score": 1.7074214352258374,
+      "mean_abs_z_score": 0.581270059143157,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2019-10-31",
+      "max_abs_z_score": 1.7595267268064678,
+      "mean_abs_z_score": 0.5108790411763011,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2019-11-30",
+      "max_abs_z_score": 1.985712943517949,
+      "mean_abs_z_score": 0.3488790344848314,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2019-12-31",
+      "max_abs_z_score": 1.9048266962618263,
+      "mean_abs_z_score": 0.33797935329910544,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2020-01-31",
+      "max_abs_z_score": 1.8578144462418913,
+      "mean_abs_z_score": 0.5389982072682802,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2020-02-29",
+      "max_abs_z_score": 2.4306782340325146,
+      "mean_abs_z_score": 0.4029225383583889,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2020-03-31",
+      "max_abs_z_score": 2.486564223794948,
+      "mean_abs_z_score": 0.48760195958977054,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2020-04-30",
+      "max_abs_z_score": 2.9348918534299826,
+      "mean_abs_z_score": 0.973138277159985,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2020-05-31",
+      "max_abs_z_score": 2.836175203823985,
+      "mean_abs_z_score": 0.8082414583417377,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2020-06-30",
+      "max_abs_z_score": 2.70029108597265,
+      "mean_abs_z_score": 0.5660765750515482,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2020-07-31",
+      "max_abs_z_score": 2.782396991315108,
+      "mean_abs_z_score": 0.6892557157183716,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2020-08-31",
+      "max_abs_z_score": 2.6093457170170615,
+      "mean_abs_z_score": 0.6739415425618976,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2020-09-30",
+      "max_abs_z_score": 5.429412130873027,
+      "mean_abs_z_score": 0.6731178267110133,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2020-10-31",
+      "max_abs_z_score": 4.043895013008211,
+      "mean_abs_z_score": 0.6676629509254876,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2020-11-30",
+      "max_abs_z_score": 3.199443641327806,
+      "mean_abs_z_score": 0.6322512413320985,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2020-12-31",
+      "max_abs_z_score": 5.399394517826341,
+      "mean_abs_z_score": 0.6305372123739765,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2021-01-31",
+      "max_abs_z_score": 6.187000425997055,
+      "mean_abs_z_score": 0.6332159345466752,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2021-02-28",
+      "max_abs_z_score": 6.456071808805455,
+      "mean_abs_z_score": 0.688326654998941,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2021-03-31",
+      "max_abs_z_score": 6.053623906713062,
+      "mean_abs_z_score": 0.9850676708056246,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2021-04-30",
+      "max_abs_z_score": 9.242794057621058,
+      "mean_abs_z_score": 2.1790547594056,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2021-05-31",
+      "max_abs_z_score": 6.776819134681379,
+      "mean_abs_z_score": 1.7002512352911767,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2021-06-30",
+      "max_abs_z_score": 5.267030243625415,
+      "mean_abs_z_score": 1.4994826929400227,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2021-07-31",
+      "max_abs_z_score": 4.441536981505258,
+      "mean_abs_z_score": 1.3698958855779682,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2021-08-31",
+      "max_abs_z_score": 3.5847794717710046,
+      "mean_abs_z_score": 1.1838218643023062,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2021-09-30",
+      "max_abs_z_score": 4.982753372305496,
+      "mean_abs_z_score": 1.0248241570957841,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2021-10-31",
+      "max_abs_z_score": 5.191697867871777,
+      "mean_abs_z_score": 0.9334952285445954,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2021-11-30",
+      "max_abs_z_score": 7.745720875433604,
+      "mean_abs_z_score": 1.2163405614845493,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2021-12-31",
+      "max_abs_z_score": 4.351973360331359,
+      "mean_abs_z_score": 0.6077312491036858,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2022-01-31",
+      "max_abs_z_score": 3.5340875204541256,
+      "mean_abs_z_score": 0.53747848806398,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2022-02-28",
+      "max_abs_z_score": 2.8591191316670894,
+      "mean_abs_z_score": 0.4561315457745744,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2022-03-31",
+      "max_abs_z_score": 4.742506724080671,
+      "mean_abs_z_score": 0.49740291672154646,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2022-04-30",
+      "max_abs_z_score": 8.566802603793388,
+      "mean_abs_z_score": 0.6233159322987603,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2022-05-31",
+      "max_abs_z_score": 9.618784050291906,
+      "mean_abs_z_score": 0.8176876265057449,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2022-06-30",
+      "max_abs_z_score": 6.265528813377617,
+      "mean_abs_z_score": 0.813894505764846,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2022-07-31",
+      "max_abs_z_score": 4.660921272400867,
+      "mean_abs_z_score": 0.9619245549335966,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2022-08-31",
+      "max_abs_z_score": 3.681552684693226,
+      "mean_abs_z_score": 0.7900622168828895,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2022-09-30",
+      "max_abs_z_score": 3.1876096724525143,
+      "mean_abs_z_score": 0.9251208497161832,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2022-10-31",
+      "max_abs_z_score": 2.3687350420919353,
+      "mean_abs_z_score": 0.9987410961252667,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2022-11-30",
+      "max_abs_z_score": 2.364696045623678,
+      "mean_abs_z_score": 0.9533869979692942,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2022-12-31",
+      "max_abs_z_score": 4.693291012409916,
+      "mean_abs_z_score": 0.8567723453501952,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2023-01-31",
+      "max_abs_z_score": 2.720930122552429,
+      "mean_abs_z_score": 0.9852139352121156,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2023-02-28",
+      "max_abs_z_score": 2.9230401414726144,
+      "mean_abs_z_score": 0.6442752753509863,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2023-03-31",
+      "max_abs_z_score": 1.5711201789422975,
+      "mean_abs_z_score": 0.6166958174758883,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2023-04-30",
+      "max_abs_z_score": 1.5575293540766137,
+      "mean_abs_z_score": 0.6466423863390611,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2023-05-31",
+      "max_abs_z_score": 1.5275235051852687,
+      "mean_abs_z_score": 0.4773897777748962,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2023-06-30",
+      "max_abs_z_score": 1.4965521546020173,
+      "mean_abs_z_score": 0.5896681045952559,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2023-07-31",
+      "max_abs_z_score": 1.8645025305784315,
+      "mean_abs_z_score": 0.44989460607047893,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2023-08-31",
+      "max_abs_z_score": 1.3161990957655072,
+      "mean_abs_z_score": 0.37744625322138137,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2023-09-30",
+      "max_abs_z_score": 1.5264385379878653,
+      "mean_abs_z_score": 0.3775317830535193,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2023-10-31",
+      "max_abs_z_score": 1.4543495570813723,
+      "mean_abs_z_score": 0.40412490872096046,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2023-11-30",
+      "max_abs_z_score": 1.5752940266208098,
+      "mean_abs_z_score": 0.47948221028938537,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2023-12-31",
+      "max_abs_z_score": 1.2992123445676105,
+      "mean_abs_z_score": 0.4399659166974691,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2024-01-31",
+      "max_abs_z_score": 1.8381486646759204,
+      "mean_abs_z_score": 0.507413272508629,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2024-02-29",
+      "max_abs_z_score": 1.4469454566237152,
+      "mean_abs_z_score": 0.46219587400554313,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2024-03-31",
+      "max_abs_z_score": 1.5490593377013493,
+      "mean_abs_z_score": 0.4243493104302785,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2024-04-30",
+      "max_abs_z_score": 1.7836943559243865,
+      "mean_abs_z_score": 0.496884106696221,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2024-05-31",
+      "max_abs_z_score": 1.1842259631965355,
+      "mean_abs_z_score": 0.41874681440101,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2024-06-30",
+      "max_abs_z_score": 2.2569813350561008,
+      "mean_abs_z_score": 0.49792372373354205,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2024-07-31",
+      "max_abs_z_score": 1.1284329429923674,
+      "mean_abs_z_score": 0.37162208982159517,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2024-08-31",
+      "max_abs_z_score": 1.0031209371261465,
+      "mean_abs_z_score": 0.36408631812640513,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2024-09-30",
+      "max_abs_z_score": 1.1508740877131862,
+      "mean_abs_z_score": 0.4194030301900365,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2024-10-31",
+      "max_abs_z_score": 1.9107787396686777,
+      "mean_abs_z_score": 0.6356352507181277,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2024-11-30",
+      "max_abs_z_score": 1.939256275594476,
+      "mean_abs_z_score": 0.6526491311689825,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2024-12-31",
+      "max_abs_z_score": 1.578428578921525,
+      "mean_abs_z_score": 0.6209626134086523,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2025-01-31",
+      "max_abs_z_score": 1.326594579411238,
+      "mean_abs_z_score": 0.41631798294365574,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2025-02-28",
+      "max_abs_z_score": 2.2246028221848335,
+      "mean_abs_z_score": 0.5015247060619794,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2025-03-31",
+      "max_abs_z_score": 1.8048626813912279,
+      "mean_abs_z_score": 0.4464287379227363,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2025-04-30",
+      "max_abs_z_score": 1.7865765942950633,
+      "mean_abs_z_score": 0.5086759030038526,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2025-05-31",
+      "max_abs_z_score": 1.9301720215711284,
+      "mean_abs_z_score": 0.5230637358633883,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2025-06-30",
+      "max_abs_z_score": 1.8373769849976065,
+      "mean_abs_z_score": 0.538631219837792,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2025-07-31",
+      "max_abs_z_score": 1.8213262534055499,
+      "mean_abs_z_score": 0.4845563588322041,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2025-08-31",
+      "max_abs_z_score": 1.3824435644709503,
+      "mean_abs_z_score": 0.4788822828470928,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2025-09-30",
+      "max_abs_z_score": 1.3376144681248783,
+      "mean_abs_z_score": 0.46414551666571613,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2025-10-31",
+      "max_abs_z_score": 1.779450447367307,
+      "mean_abs_z_score": 0.5099055122998447,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2025-11-30",
+      "max_abs_z_score": 2.3652394734087787,
+      "mean_abs_z_score": 0.5575093491562674,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2025-12-31",
+      "max_abs_z_score": 3.6787175915655914,
+      "mean_abs_z_score": 0.5350467173499331,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2026-01-31",
+      "max_abs_z_score": 5.422485195530668,
+      "mean_abs_z_score": 0.5301784790692863,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2026-02-28",
+      "max_abs_z_score": 5.342382183524801,
+      "mean_abs_z_score": 0.616735171461383,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2026-03-31",
+      "max_abs_z_score": 7.003120661251578,
+      "mean_abs_z_score": 0.763630926424679,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2026-04-30",
+      "max_abs_z_score": 3.993807997699157,
+      "mean_abs_z_score": 0.711045071365074,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    },
+    {
+      "as_of": "2026-05-31",
+      "max_abs_z_score": 3.831278134978205,
+      "mean_abs_z_score": 0.8835914869606873,
+      "outside_training_range_share": 0.0,
+      "ridge_coefficient_sign": -1
+    }
+  ]
+}

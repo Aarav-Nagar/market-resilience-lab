@@ -81,3 +81,10 @@ window has 17; the remaining 167 months are explicitly `normal_or_unlabeled`.
 Those counts are too small and the registry too incomplete for a regime-level
 claim. The report is retained as a reproducible descriptive slice and preserves
 the monthly gross-return/cost limitation in its artifact.
+
+## Feature drift audit
+
+[`ff49_ridge_feature_drift.json`](ff49_ridge_feature_drift.json) records 186
+holdout-month feature-drift observations, each standardized only with its own
+expanding training window. It reports magnitude and training-range exceedance;
+it does not claim that drift caused coefficient-sign selection or returns.

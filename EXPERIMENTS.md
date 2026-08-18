@@ -33,6 +33,12 @@ python -m market_resilience_lab.experiments.divergence_audit `
   --min-train-periods 1000
 ```
 
+## Feature-drift audit
+
+The drift audit records each holdout month's absolute standardized feature score
+and share outside the training feature range, using only that split's training
+statistics. It is an uncertainty diagnostic, not a causal explanation.
+
 The committed initial screen uses a 1,000-month training window instead of the
 120-month default so the full historical run remains bounded in the local
 execution environment. Its exact configuration and negative outcome are in
